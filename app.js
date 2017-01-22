@@ -21,7 +21,7 @@ var commentRoutes    = require("./routes/comment"),
 
 mongoose.connect(process.env.DATABASEURL);
 //mongoose.connect("mongodb://jobonno:monteleone@ds117909.mlab.com:17909/bonno");
-
+//export DATABASEURL=mongodb://localhost/yelp_camp_final
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
