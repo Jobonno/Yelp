@@ -4,14 +4,14 @@
         <div class="col-md-3">
             <p class="lead">YelpCamp</p>
             <div class="list-group">
-                <li class="list-group-item active">Info 1</li>
-                <li class="list-group-item">Info 2</li>
-                <li class="list-group-item">Info 3</li>
+                <button id="changeBackground" class="list-group-item">Photo Main</button>
+                <button id="changeBackground2" class="list-group-item">Photo 2</button>
+                <button id="changeBackground3" class="list-group-item">Photo 3</button>
             </div>
         </div>
         <div class="col-md-9">
             <div class="thumbnail">
-                <img class="img-responsive" src="<%= campground.image %>">
+                <img id="mainImage" class="img-responsive" src="<%= campground.image %>">
                 <div class="caption-full">
                     <h4 class="pull-right">$<%= campground.price%>/Night</h4>
                     <h4><a><%= campground.name %></a></h4>
@@ -58,7 +58,34 @@
     </div>
     
 </div>
+<script>
+var count = [ '<%= campground.image %>' ,   '<%= campground.image2 %>' , '<%= campground.image3 %>'];
 
+    var button = document.getElementById("changeBackground");
+    button.addEventListener("click", function(){
+        
+    NextImg(count[0]);
+    });
+    
+    var button2 = document.getElementById("changeBackground2");
+    button2.addEventListener("click", function(){
+        
+    NextImg(count[1]);
+    });
+    
+    var button3 = document.getElementById("changeBackground3");
+    button3.addEventListener("click", function(){
+        
+    NextImg(count[2]);
+    });
+
+
+
+function NextImg(srcUrl){
+    document.getElementById("mainImage").src=srcUrl;
+}
+</script>
+ 
 
 
 

@@ -21,12 +21,14 @@ router.post("/", middleware.isLoggedIn ,function(req, res){
    var name = req.body.name;
    var price = req.body.price;
    var img = req.body.image;
+   var img2 = req.body.image2;
+   var img3 = req.body.image3;
    var desc = req.body.description;
    var author = {
        id: req.user._id,
        username: req.user.username
    };
-   var newCampground = {name:name, price:price ,image:img, description:desc, author:author};
+   var newCampground = {name:name, price:price ,image:img, image2:img2, image3:img3, description:desc, author:author};
    Campground.create(newCampground, function(err, newCamp){
       if(err){
           console.log(err);
