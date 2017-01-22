@@ -18,6 +18,7 @@ var commentRoutes    = require("./routes/comment"),
 //seedDB();//seed database
 
 
+
 mongoose.connect(process.env.DATABASEURL);
 //mongoose.connect("mongodb://jobonno:monteleone@ds117909.mlab.com:17909/bonno");
 
